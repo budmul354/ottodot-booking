@@ -1,6 +1,7 @@
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict
+from typing import Literal
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class StudentRead(BaseModel):
@@ -20,8 +21,8 @@ class TrialClassRead(BaseModel):
 
 
 class BookingCreate(BaseModel):
-    student_id: int
-    trial_class_id: int
+    student_id: int = Field(gt=0)
+    trial_class_id: int = Field(gt=0)
 
 
 class BookingCreated(BaseModel):
@@ -30,7 +31,7 @@ class BookingCreated(BaseModel):
 
 
 class PaymentCreate(BaseModel):
-    result: str
+    result: Literal["success", "failure"]
 
 
 class PaymentResult(BaseModel):

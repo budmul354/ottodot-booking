@@ -31,8 +31,10 @@ def post_payment(booking_id: int, payload: PaymentCreate, db: Session = Depends(
         payment, booking = record_payment(db, booking_id, payload.result)
     except BookingNotFoundError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
-    except (DuplicateBookingError, InvalidPaymentResultError) as exc:
+    except DuplicateBookingError as exc:
         raise HTTPException(status_code=409, detail=str(exc)) from exc
+    except InvalidPaymentResultError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
     return {"payment_status": payment.status.value, "booking_status": booking.status.value}
 
 

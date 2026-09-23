@@ -42,3 +42,7 @@ Authentication, authorization, real payment providers, refunds, notifications, w
 ## Phase 4 Sub-phase 1
 
 Deployment and concurrency foundations are included: an Alembic initial migration, a PostgreSQL-gated concurrent last-seat test, and Docker Compose services for PostgreSQL, backend, and frontend.
+
+## Phase 4 Sub-phase 2
+
+The API now validates request values, returns clearer `400`, `404`, and `409` responses, and exposes `/health` and `/metrics`. Booking events are logged and counted for confirmation, payment failure, capacity rejection, duplicate rejection, and validation failures. API integration tests cover the booking/payment/roster flow and malformed input.
