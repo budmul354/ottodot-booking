@@ -1,7 +1,7 @@
 from datetime import datetime
 from enum import StrEnum
 
-from sqlalchemy import DateTime, Enum, ForeignKey, Index, String
+from sqlalchemy import DateTime, Enum, ForeignKey, Index, String, text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from ..database import Base
@@ -23,8 +23,8 @@ class Booking(Base):
             "student_id",
             "trial_class_id",
             unique=True,
-            postgresql_where="status = 'confirmed'",
-            sqlite_where="status = 'confirmed'",
+            postgresql_where=text("status = 'confirmed'"),
+            sqlite_where=text("status = 'confirmed'"),
         ),
     )
 

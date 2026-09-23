@@ -7,8 +7,6 @@ from sqlalchemy.orm import sessionmaker
 from backend.app.database import Base
 from backend.app.models import Booking, BookingStatus, Parent, Student, TrialClass
 from backend.app.services.booking_service import (
-    CapacityUnavailableError,
-    DuplicateBookingError,
     create_booking,
     record_payment,
 )
