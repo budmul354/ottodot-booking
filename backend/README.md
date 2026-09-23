@@ -8,7 +8,9 @@ This package is the Phase 1 domain and database foundation for the Ottodot trial
 2. Install `requirements.txt`.
 3. From the repository root, run `python -m backend.app.seed`.
 
-`create_tables()` is intentionally a small bootstrap for the time-boxed exercise. A migration tool can replace it when the schema needs versioned deployment.
+`create_tables()` is intentionally a small bootstrap for the time-boxed exercise. For deployed environments, use `alembic upgrade head`.
+
+From the repository root, `docker compose up --build` starts PostgreSQL, runs the migration and seed, then starts the API and frontend.
 
 ## Invariants represented in the schema
 

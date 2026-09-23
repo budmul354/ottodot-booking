@@ -38,3 +38,7 @@ Open http://127.0.0.1:3000. The UI calls the backend, displays availability as i
 ## Deliberately excluded
 
 Authentication, authorization, real payment providers, refunds, notifications, waiting lists, regular enrollment, background workers, and production UI styling remain outside this time-boxed trial-booking slice.
+
+## Phase 4 Sub-phase 1
+
+Deployment and concurrency foundations are included: an Alembic initial migration, a PostgreSQL-gated concurrent last-seat test, and Docker Compose services for PostgreSQL, backend, and frontend.
