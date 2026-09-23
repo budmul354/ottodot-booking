@@ -24,3 +24,17 @@ The backend now exposes the core trial booking flow:
 - `GET /bookings/trial-classes/{class_id}/roster`
 
 Successful payment confirmation locks the trial-class row, rechecks capacity, checks duplicate confirmed bookings, and only then confirms the booking. A successful mock payment can therefore produce `capacity_unavailable` when another transaction wins the last seat.
+
+## Phase 3 complete
+
+The `frontend/` directory contains a dependency-free browser UI for the full demo flow. Start the API, then serve that directory with any static server:
+
+```powershell
+python -m http.server 3000 --directory frontend
+```
+
+Open http://127.0.0.1:3000. The UI calls the backend, displays availability as informational only, records mock payment results, and refreshes the confirmed roster.
+
+## Deliberately excluded
+
+Authentication, authorization, real payment providers, refunds, notifications, waiting lists, regular enrollment, background workers, and production UI styling remain outside this time-boxed trial-booking slice.
