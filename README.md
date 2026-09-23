@@ -12,4 +12,15 @@ The repository now contains the domain and database foundation described in the 
 
 See [backend/README.md](backend/README.md) for setup and seed instructions.
 
-Phase 2 will add booking/payment services, API endpoints, transaction locking, and tests.
+## Phase 2 complete
+
+The backend now exposes the core trial booking flow:
+
+- `GET /students`
+- `GET /trial-classes`
+- `POST /bookings`
+- `POST /bookings/{booking_id}/payment`
+- `GET /bookings/{booking_id}`
+- `GET /bookings/trial-classes/{class_id}/roster`
+
+Successful payment confirmation locks the trial-class row, rechecks capacity, checks duplicate confirmed bookings, and only then confirms the booking. A successful mock payment can therefore produce `capacity_unavailable` when another transaction wins the last seat.
