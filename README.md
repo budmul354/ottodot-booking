@@ -19,7 +19,11 @@ A minimal full-stack trial-booking slice: a parent selects a synthetic child and
 
 ## Time spent
 
-This was scoped as a 3–4 hour take-home implementation. The work was timeboxed to approximately 4 hours, including implementation, tests, documentation, and verification.
+Based on the git commit:
+- first commit was Wed Sep 23 16:53:57 2026 +0700
+- last commit was Wed Sep 23 21:57:53 2026 +0700
+Total time spent was roughly 5 hours, this is because I have to do something else which is very urgent after fifth commit at Wed Sep 23 19:32:55 2026 +0700, and continue again about 1 hour later, so next commit after that is Wed Sep 23 21:28:29 2026 +0700.
+I believe if I can continuosly focusing and blocking time, it should be around 3 hours to finish.
 
 ## Architecture
 
